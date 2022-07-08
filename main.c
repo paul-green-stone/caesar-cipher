@@ -2,17 +2,11 @@
 
 int main(int argc, char **argv) {
 
-    char *plaintext = "My name is Ilya.";
-    char* ciphertext = NULL;
-    size_t key = 10;
+    char* str = "AAA aaa";
+    char* str1 = "ZZZ zzz";
 
-    char* decrypted_message = NULL;
-
-    if ((ciphertext = caesarCipher_encrypt(plaintext, 10)) != NULL)
-        printf("%s (%llu) %s\n", plaintext, key, ciphertext);
-
-    if ((decrypted_message = caesarCipher_decrypt(ciphertext, key)) != NULL)
-        printf("%s (%llu) %s\n", ciphertext, key, decrypted_message);
+    for (size_t i = 0; i < 27; i++)
+        printf("%llu - %s\n", i, caesarCipher_decrypt(str1, i));
 
     return EXIT_SUCCESS;
 }
